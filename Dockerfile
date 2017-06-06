@@ -8,6 +8,4 @@ RUN cd /tmp \
 	&& rm /tmp/telegraf-1.3.1_linux_armhf.tar.gz \
 	&& rm -r /tmp/telegraf
 
-VOLUME /etc/telegraf
-
 CMD telegraf
