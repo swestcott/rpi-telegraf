@@ -1,0 +1,17 @@
+sudo: required
+
+language: bash
+
+services:
+- docker
+
+script:
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+- docker build -t swestcott/rpi-telegraf:build .
+- docker run swestcott/rpi-telegraf:build telegraf version
+- >
+  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker tag swestcott/rpi-telegraf:build swestcott/rpi-telegraf:latest
+    docker push swestcott/rpi-telegraf:latest;
+  fi

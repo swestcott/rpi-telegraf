@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch:edge
+FROM hypriot/rpi-alpine:3.5
 
 ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.3.1_linux_armhf.tar.gz /tmp/
 
