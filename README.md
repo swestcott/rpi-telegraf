@@ -1,4 +1,4 @@
-# rpi-telegraf
+# rpi-telegraf [![Build Status](https://travis-ci.org/swestcott/rpi-telegraf.svg?branch=master)](https://travis-ci.org/swestcott/rpi-telegraf)
 
 [Telegraf 1.3.1](https://github.com/influxdata/telegraf) docker image for use with the Raspberry Pi.
 
