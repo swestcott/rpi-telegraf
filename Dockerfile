@@ -1,11 +1,15 @@
 FROM hypriot/rpi-alpine:3.5
 
-ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.3.1_linux_armhf.tar.gz /tmp/
+ENV TELEGRAF_VERSION 1.3.1
+
+ADD https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz /tmp/
 
 RUN cd /tmp \
-	&& tar -zxvf /tmp/telegraf-1.3.1_linux_armhf.tar.gz \
+	&& tar -zxvf /tmp/telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz \
 	&& cp -r /tmp/telegraf/* / \
-	&& rm /tmp/telegraf-1.3.1_linux_armhf.tar.gz \
+	&& rm /tmp/telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz \
 	&& rm -r /tmp/telegraf
+
+EXPOSE 9126
 
 CMD telegraf
