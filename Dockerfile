@@ -1,6 +1,6 @@
 FROM hypriot/rpi-alpine:3.5
 
-ENV TELEGRAF_VERSION 1.3.2
+ENV TELEGRAF_VERSION 1.3.3
 
 ADD https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz /tmp/
 
