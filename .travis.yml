@@ -9,6 +9,8 @@ script:
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 - docker build -t swestcott/rpi-telegraf:build .
 - docker run swestcott/rpi-telegraf:build telegraf version
+- VERSION=$(docker inspect --format '{{ range .Config.Env }}{{ println . }}{{ end }}' swestcott/rpi-telegraf:build | grep TELEGRAF_VERSION | sed 's/^.*=//')
+- echo $VERSION
 - >
   if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
