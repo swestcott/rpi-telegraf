@@ -2,7 +2,7 @@ FROM hypriot/rpi-alpine:3.6
 
 LABEL maintainer="swestcott@gmail.com"
 
-ENV TELEGRAF_VERSION 1.4.1
+ENV TELEGRAF_VERSION 1.4.2
 
 ADD https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz /tmp/
 
