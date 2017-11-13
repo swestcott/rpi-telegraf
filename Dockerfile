@@ -10,6 +10,6 @@ RUN cd /tmp \
 	&& cp -r /tmp/telegraf/* / \
 	&& rm -r /tmp/telegraf*
 
-USER nobody
+#USER nobody
 EXPOSE 9126
 CMD telegraf
