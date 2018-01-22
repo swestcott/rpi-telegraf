@@ -1,7 +1,7 @@
 FROM hypriot/rpi-alpine:3.6
 LABEL maintainer="swestcott@gmail.com"
 
-ENV TELEGRAF_VERSION 1.5.0
+ENV TELEGRAF_VERSION 1.5.1
 
 RUN sed -i -e 's/http/https/g' /etc/apk/repositories
 RUN apk --no-cache upgrade
