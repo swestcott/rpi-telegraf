@@ -1,7 +1,7 @@
 FROM resin/armhf-alpine:3.7
 LABEL maintainer="swestcott@gmail.com"
 
-ENV TELEGRAF_VERSION 1.6.0
+ENV TELEGRAF_VERSION 1.6.1
 
 RUN ["cross-build-start"]
 
