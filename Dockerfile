@@ -2,7 +2,7 @@ FROM resin/armhf-alpine:3.7
 LABEL maintainer="swestcott@gmail.com" \
       org.label-schema.vcs-url="https://github.com/swestcott/rpi-telegraf"
 
-ENV TELEGRAF_VERSION 1.7.1
+ENV TELEGRAF_VERSION 1.7.2
 
 RUN ["cross-build-start"]
 
